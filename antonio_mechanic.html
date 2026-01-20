@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio's Auto Service - Professional Mechanic Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #d32f2f;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --orange-accent: #ff6f00;
+            --white: #ffffff;
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--gradient-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated background pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(211, 47, 47, 0.05) 10px,
+                    rgba(211, 47, 47, 0.05) 20px
+                );
+            z-index: -1;
+            animation: slidePattern 30s linear infinite;
+        }
+
+        @keyframes slidePattern {
+            0% { transform: translateX(-20px) translateY(-20px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+
+        /* Header */
+        .header {
+            padding: 2rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--orange-accent) 100%);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            opacity: 0.1;
+        }
+
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            animation: slideInFromTop 1s ease-out 0.2s both;
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Call Button */
+        .call-section {
+            padding: 3rem 0;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .call-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--orange-accent) 100%);
+            color: var(--white);
+            padding: 1.5rem 3rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .call-button::before {
+            content: '📞';
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .call-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .call-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(211, 47, 47, 0.4);
+        }
+
+        .call-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .services-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--orange-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .services-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-red);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: var(--orange-accent);
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--orange-accent);
+            text-transform: uppercase;
+        }
+
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 111, 0, 0.1);
+            border-radius: 15px;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .coming-soon h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--orange-accent);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .coming-soon p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem 0;
+            text-align: center;
+            background: var(--dark-gray);
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .spanish-note {
+            font-size: 1.1rem;
+            color: var(--orange-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .call-button {
+                padding: 1.2rem 2rem;
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <header class="header">
+        <div class="container">
+            <h1>Antonio's Auto Service</h1>
+            <p class="subtitle">Professional Automotive Repair & Maintenance</p>
+        </div>
+    </header>
+
+    <section class="call-section">
+        <div class="container">
+            <a href="tel:1-872-600-1256" class="call-button">
+                Call Antonio Now: (872) 600-1256
+            </a>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="services-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🚗</span>
+                    <h3 class="service-name">Brake Jobs</h3>
+                    <div class="service-price">Amazing Prices!</div>
+                    <p class="service-description">Complete brake system repair and maintenance. From brake pads to full brake system overhauls, we ensure your safety on the road.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🛢️</span>
+                    <h3 class="service-name">Oil Change</h3>
+                    <div class="service-price">Quick & Reliable</div>
+                    <p class="service-description">Fast and professional oil change service using premium quality oils. Keep your engine running smooth and extend its life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coming-soon">
+        <div class="container">
+            <h3>More Services Coming Soon!</h3>
+            <p>We're expanding our services to better serve you. Stay tuned for more automotive solutions.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="spanish-note">¡Se Habla Español!</p>
+            <p>&copy; 2026 Antonio's Auto Service. Professional automotive care you can trust.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click tracking for the call button
+            const callButton = document.querySelector('.call-button');
+            callButton.addEventListener('click', function() {
+                // Add a subtle pulse effect when clicked
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+
+            // Add hover effect for service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

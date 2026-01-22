@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #d32f2f;
-            --dark-gray: #1a1a1a;
-            --light-gray: #f5f5f5;
-            --orange-accent: #ff6f00;
+            --steel-blue: #2c3e50;
+            --charcoal: #0f0f0f;
+            --gunmetal: #2c3531;
+            --electric-blue: #00d4ff;
             --white: #ffffff;
-            --shadow-dark: rgba(0, 0, 0, 0.8);
-            --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            --shadow-dark: rgba(0, 0, 0, 0.9);
+            --gradient-bg: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2c3531 100%);
         }
 
         * {
@@ -48,8 +48,8 @@
                     45deg,
                     transparent,
                     transparent 10px,
-                    rgba(211, 47, 47, 0.05) 10px,
-                    rgba(211, 47, 47, 0.05) 20px
+                    rgba(44, 62, 80, 0.15) 10px,
+                    rgba(44, 62, 80, 0.15) 20px
                 );
             z-index: -1;
             animation: slidePattern 30s linear infinite;
@@ -64,7 +64,7 @@
         .header {
             padding: 2rem 0;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--orange-accent) 100%);
+            background: linear-gradient(135deg, var(--steel-blue) 0%, var(--gunmetal) 100%);
             box-shadow: 0 4px 20px var(--shadow-dark);
             position: relative;
         }
@@ -122,14 +122,14 @@
 
         .call-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--orange-accent) 100%);
+            background: linear-gradient(135deg, var(--steel-blue) 0%, var(--electric-blue) 100%);
             color: var(--white);
             padding: 1.5rem 3rem;
             font-size: 1.4rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -158,7 +158,7 @@
 
         .call-button:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(211, 47, 47, 0.4);
+            box-shadow: 0 12px 35px rgba(44, 62, 80, 0.5);
         }
 
         .call-button:hover::after {
@@ -188,7 +188,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--orange-accent);
+            color: var(--electric-blue);
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
@@ -202,7 +202,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: var(--primary-red);
+            background: var(--steel-blue);
         }
 
         .services-grid {
@@ -237,7 +237,7 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border-color: var(--orange-accent);
+            border-color: var(--electric-blue);
         }
 
         .service-card:hover::before {
@@ -255,14 +255,14 @@
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--orange-accent);
+            color: var(--electric-blue);
             text-transform: uppercase;
         }
 
         .service-price {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-red);
+            color: var(--steel-blue);
             margin-bottom: 1rem;
         }
 
@@ -276,7 +276,7 @@
         .coming-soon {
             text-align: center;
             padding: 3rem 0;
-            background: rgba(255, 111, 0, 0.1);
+            background: rgba(0, 212, 255, 0.1);
             border-radius: 15px;
             margin: 2rem 0;
             animation: fadeInUp 1s ease-out 0.8s both;
@@ -285,7 +285,7 @@
         .coming-soon h3 {
             font-family: 'Oswald', sans-serif;
             font-size: 2rem;
-            color: var(--orange-accent);
+            color: var(--electric-blue);
             margin-bottom: 1rem;
             text-transform: uppercase;
         }
@@ -299,14 +299,14 @@
         .footer {
             padding: 2rem 0;
             text-align: center;
-            background: var(--dark-gray);
+            background: var(--charcoal);
             margin-top: 4rem;
             animation: fadeInUp 1s ease-out 1s both;
         }
 
         .spanish-note {
             font-size: 1.1rem;
-            color: var(--orange-accent);
+            color: var(--electric-blue);
             font-weight: 600;
             margin-bottom: 1rem;
         }
